@@ -278,12 +278,14 @@ namespace microbit_CAR{
 
         switch (index) {
             case LightSensorIndex.LEFT: {
+                pins.setPull(DigitalPin.P1, PinPullMode.PullDown);
                 temp = pins.analogReadPin(AnalogPin.P1);
                 temp = temp * 100 /1024;
                 break;
             }
 
             case LightSensorIndex.RIGHT: {
+                pins.setPull(DigitalPin.P2, PinPullMode.PullDown);
                 temp = pins.analogReadPin(AnalogPin.P2);
                 temp = temp * 100 /1024;
                 break;
